@@ -24,10 +24,10 @@ export class AppComponent {
     } else {
       console.log('fallback');
       window.alert('fallback new happens');
-      navigator.share({
-        title: title,
-        url: productURL,
-      });
+      this.onShareDesktop();
     }
+  };
+  onShareDesktop = () => {
+    window.alert('desktop opened');
   };
 }
