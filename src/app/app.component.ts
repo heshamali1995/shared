@@ -24,6 +24,15 @@ export class AppComponent {
     } else {
       console.log('fallback');
       window.alert('fallback happens');
+      navigator
+        .share({
+          title: title,
+          url: productURL,
+        })
+        .catch((error: any) => {
+          console.log('error', error);
+          window.alert(`error happens ${error}`);
+        });
     }
   };
 }
